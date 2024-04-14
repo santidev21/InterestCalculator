@@ -1,0 +1,30 @@
+﻿@model CalculatorModel
+
+<h1>Interest calculator</h1>
+
+<form asp-action="Calculate" method="post">
+    <div>
+        <label for="PurchaseAmount">Purchase Amount:</label>
+        <input type="number" id="PurchaseAmount" name="PurchaseAmount" value="@Model.PurchaseAmount" />
+    </div>
+
+    <div>
+        <label for="Installments">Installments:</label>
+        <input type="number" id="Installments" name="Installments" value="@Model.Installments" />
+    </div>
+
+    <div>
+        <label for="Interest">Interest rate (%):</label>
+        <input asp-for="@Model.Interest" / id="Interest" name="Interest">
+    </div>
+
+    <div>
+        <label for="InterestType">Interest Type:</label>
+        <select id="InterestType" name="InterestType">
+            <option value="0">Effective Annual Rate</option>
+            <option value="1">Monthly</option>
+        </select>
+    </div>
+
+    <button type="submit">Calculate</button>
+</form>

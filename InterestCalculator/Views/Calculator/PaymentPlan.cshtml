@@ -1,0 +1,29 @@
+﻿@model CalculatorModel
+
+<h1>Resultados</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Installment</th>
+            <th>Principal paid</th>
+            <th>Interest paid</th>
+            <th>Payment amount</th>
+            <th>Remaining amount</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var payment in Model.PaymentPlan)
+        {
+            <tr>
+                <td>@payment.InstallmentNumber</td>
+                <td>@payment.PrincipalPaid.ToString("C")</td>
+                <td>@payment.InterestPaid.ToString("C")</td>
+                <td>@payment.PaymentAmount.ToString("C")</td>
+                <td>@payment.RemainingPrincipal.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index">Back</a>
