@@ -15,7 +15,7 @@
             decimal monthlyRate;
             if( InterestType == InterestType.effectiveAnnualRate)
             {
-                monthlyRate = (decimal)Math.Pow((double)(1 + Interest), 1.0 / 12) - 1;
+                monthlyRate = (decimal)Math.Pow((double)(1 + (Interest/100)), 1.0 / 12) - 1;
             }
             else
             {
